@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+     <link rel="stylesheet" href="check_migrate.css">
+    <title>Check Live Migrate</title>
+  </head>
+  <body>
+    <form method='post'>
+            {% csrf_token %}
+            <!--{{ form.as_p }}-->
+            <h3>Chon may Compute chua VM:
+            <select  name="computes">
+                {% for item in computes %}
+                    <option value= "{{ item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            </h3>
+            <input id='sub' type='submit' name="habut" value='Submit'>
+    </form>
+
+  </body>
+</html>

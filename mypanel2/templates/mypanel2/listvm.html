@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Check Live Migrate</title>
+  </head>
+  <body>
+    <form method='post'>
+        {% csrf_token %}
+        <!--{{ form.as_p }}-->
+        <label></label>
+        <h3>Chon tenVM (id) can Live Migrate:
+        <select  name="vms">
+            {% for item in vms %}
+                <option value= "{{ item}}">{{ item }}</option>
+            {% endfor %}
+        </select>
+            </h3>
+
+        <h3>Chon may Compute muon chuyen den:
+        <select  name="computes">
+            {% for item in computes %}
+                <option value= "{{ item}}">{{ item }}</option>
+            {% endfor %}
+        </select>
+        </h3>
+
+        <input type='submit' name="habutvm" value='Submit'>
+    </form>
+
+  </body>
+</html>
